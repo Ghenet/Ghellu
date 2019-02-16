@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Ghenet/Ghellu/issues"
   },
-  "homepage": "https://github.com/Ghenet/Ghellu#readme"
+  "homepage": "https://github.com/Ghenet/Ghellu#readme",
+  "dependencies": {
+    "mongoose": "^5.4.13"
+  }
 }
