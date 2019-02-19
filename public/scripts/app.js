@@ -23,7 +23,7 @@ function render () {
   // empty existing posts from view
   $questionList.empty();
 
-  // pass `allBooks` into the template function
+  // pass `allQuestion` into the template function
   var questionHtml = getAllQuestionsHtml(allQuestions);
 
   // append html to the view
