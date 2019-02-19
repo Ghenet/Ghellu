@@ -45,3 +45,7 @@ var answer =[
         img: ""
     }
 ];
+
+app.listen(process.env.PORT || 3000, function () {
+    console.log(' app listening at http://localhost:3000/');
+  });
