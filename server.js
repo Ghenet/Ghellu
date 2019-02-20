@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 //Defining root route: localhost:3000/
 app.get('/', (req, res) => {
-    res.sendFile('views/index.html', {
+    res.sendFile('views/landingpage.html', {
         root: __dirname
     });
 });
