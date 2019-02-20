@@ -33,9 +33,16 @@ nav button , div{
     background-color: blue;
     float: right;
     top: -488px;
-    position:relative;
-    
-    
+    position:relative;   
+}
+
+.checkbtn{
+    width: 35%;
+    padding: 20px;
+    margin: 45px; 
+    margin-left:90px; 
+    font-size: 20px;
+    background-color: rgb(10, 173, 59);
 }
 
 @media (max-width:760px){
