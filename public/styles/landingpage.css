@@ -1,0 +1,36 @@
+body{
+    margin:20px;
+}
+nav{
+    margin : 0 auto;
+    width: 100%;
+    background-color:royalblue;
+    padding: 35px;
+    display: flex;
+    margin:  30px;;
+    
+    }
+    nav div{
+        float: right;
+        margin: 0 125px;
+    }
+    main{
+        margin: 40px;
+    }
+    main button{
+        display:flex;
+        width: 50%;
+        padding:30px;
+        font-size:20px;
+        margin: 20px;
+    }
+    main img{
+    margin: 20px;
+    width: 39%;
+    height: 300px;
+    border-radius: 10px;
+    background-color: blue;
+    float: right;
+    top: -338px;
+    position:relative;
+    }
