@@ -1,9 +1,9 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
+app = express();
+bodyParser = require('body-parser');
 
-//Import all models here
-const db = require('./models');
+
+
 //config body parser
 app.use(bodyParser.urlencoded({
     extended: true
@@ -12,17 +12,10 @@ app.use(bodyParser.urlencoded({
 //Serve static files from public folder
 app.use(express.static('public'));
 
-//Defining root route: localhost:3000/
-app.get('/', (req, res) => {
-    res.sendFile('views/index.html', {
-        root: __dirname
-    });
-});
-
 
 //Data
 
-let question = [{
+let questions = [{
         _id: 1,
         description: "What is html"
     },
@@ -84,7 +77,7 @@ let question = [{
     }
 ];
 
-let answer = [{
+let reviews = [{
         _id: 1,
         description: "response 1"
     },
@@ -146,9 +139,29 @@ let answer = [{
     }
 ];
 
+
+//HTML Endpoints
+//Defining root route: localhost:3000/
+app.get('/', (req, res) => {
+    res.sendFile('views/index.html', {
+        root: __dirname
+    });
+});
+
+//Get all reviews
+app.get('/api/reviews', (req,res) => {
+    console.log('reviews are displaying');
+    res.json(reviews);
+});
+
+//Get reviews by id
+
+
 //Create CRUD endpoints
 
 //Create reviews (post method)
+
+
 //Update reviews(ge)
 
 
