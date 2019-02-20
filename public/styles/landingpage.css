@@ -25,12 +25,20 @@ nav{
         margin: 20px;
     }
     main img{
-    margin: 20px;
-    width: 39%;
-    height: 300px;
-    border-radius: 10px;
-    background-color: blue;
-    float: right;
-    top: -338px;
-    position:relative;
+        margin: 20px;
+        width: 39%;
+        height: 300px;
+        border-radius: 10px;
+        background-color: blue;
+        float: right;
+        top: -438px;
+        position:relative;
+        }
+    textarea{
+        display:flex;
+        width: 45%;
+        padding:30px;
+        font-size:20px;
+        margin: 20px;
     }
+  

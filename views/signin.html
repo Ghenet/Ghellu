@@ -5,28 +5,27 @@
     <meta name="google-signin-scope" content="profile email">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-    <meta name="google-signin-client_id" content="349426020456-5serq8r6sr79kncj0csus7q9l41tpdkb.apps.googleusercontent.com
-    ">
+    <meta name="google-signin-client_id" content="349426020456-eg05at3orgftnd83tn4974m2napi5jes.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer> </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
-    <script> 
+    <!-- <script> 
     gapi.load ('auth2', function(){
         gapi.autho2.init();
-     });</script>
-     <!-- <style>
+     });</script> -->
+     <style>
      .g-signin2{
-         margin-left: 500px;
-         margin-right: 200px;
-         background-color: #000;
+         margin : 400px 200px 0 500px;
      }
      
-     </style> -->
+     </style>
   </head>
   <body>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     
    <script>
+    //  gapi.load ('auth2', function(){
+    //     gapi.autho2.init();
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -41,6 +40,7 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       }
+    // }
     </script>
   </body>
 </html>
