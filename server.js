@@ -1,9 +1,9 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
+app = express();
+bodyParser = require('body-parser');
 
-//Import all models here
-const db = require('./models');
+
+
 //config body parser
 app.use(bodyParser.urlencoded({
     extended: true
@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 //Defining root route: localhost:3000/
 app.get('/', (req, res) => {
-    res.sendFile('views/signin.html', {
+    res.sendFile('views/index.html', {
         root: __dirname
     });
 });
@@ -22,42 +22,158 @@ app.get('/', (req, res) => {
 
 //Data
 
-var question = [{
-        title: "Who",
+let questions = [{
         _id: 1,
+        description: "What is html"
     },
     {
-        title: "What",
         _id: 2,
+        description: "What is css"
     },
     {
-        title: "when",
         _id: 3,
-    },
-];
-
-var answer = [{
-        title: "",
-        _id: 1,
-        value: "This is the answer",
-        img: ""
+        description: "Why use cors"
     },
     {
-        title: "",
-        _id: 2,
-        value: "This is the answer",
-        img: ""
+        _id: 4,
+        description: "What is mongoose"
     },
     {
-        title: "",
-        _id: 3,
-        value: "This is the answer",
-        img: ""
+        _id: 5,
+        description: "Why use package.json"
+    },
+    {
+        _id: 6,
+        description: "What is css"
+    },
+    {
+        _id: 7,
+        description: "What is css"
+    },
+    {
+        _id: 8,
+        description: "What is css"
+    },
+    {
+        _id: 9,
+        description: "What is css"
+    },
+    {
+        _id: 10,
+        description: "What is css"
+    },
+    {
+        _id: 11,
+        description: "What is css"
+    },
+    {
+        _id: 12,
+        description: "What is css"
+    },
+    {
+        _id: 13,
+        description: "What is css"
+    },
+    {
+        _id: 14,
+        description: "What is css"
+    },
+    {
+        _id: 15,
+        description: "What is css"
     }
 ];
+
+let reviews = [{
+        _id: 1,
+        description: "response 1"
+    },
+    {
+        _id: 2,
+        description: "text 2"
+    },
+    {
+        _id: 3, 
+        description: "text4"
+    },
+    {
+        _id: 4,
+        description: "What is mongoose"
+    },
+    {
+        _id: 5,
+        description: "Why use package.json"
+    },
+    {
+        _id: 6,
+        description: "What is css"
+    },
+    {
+        _id: 7,
+        description: "What is css"
+    },
+    {
+        _id: 8,
+        description: "What is css"
+    },
+    {
+        _id: 9,
+        description: "What is css"
+    },
+    {
+        _id: 10,
+        description: "What is css"
+    },
+    {
+        _id: 11,
+        description: "What is css"
+    },
+    {
+        _id: 12,
+        description: "What is css"
+    },
+    {
+        _id: 13,
+        description: "What is css"
+    },
+    {
+        _id: 14,
+        description: "What is css"
+    },
+    {
+        _id: 15,
+        description: "What is css"
+    }
+];
+
+
+//HTML Endpoints
+//Defining root route: localhost:3000/
+app.get('/', (req, res) => {
+    res.sendFile('views/index.html', {
+        root: __dirname
+    });
+});
+
+//Get all reviews
+app.get('/api/reviews', (req,res) => {
+    console.log('reviews are displaying');
+    res.json(reviews);
+});
+
+//Get reviews by id
+
+
+//Create CRUD endpoints
+
+//Create reviews (post method)
+
+
+//Update reviews(ge)
+
+
 
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Ghellu game listening at http://localhost:3000/`)
 });
-
