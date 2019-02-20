@@ -1,23 +1,16 @@
-const express = require('express');
+const express = require("express");
 app = express();
-bodyParser = require('body-parser');
-
-
+bodyParser = require("body-parser");
 
 //config body parser
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(
+    bodyParser.urlencoded({
+        extended: true
+    })
+);
 
 //Serve static files from public folder
-app.use(express.static('public'));
-
-//Defining root route: localhost:3000/
-app.get('/', (req, res) => {
-    res.sendFile('views/index.html', {
-        root: __dirname
-    });
-});
+app.use(express.static("public"));
 
 
 //Data
@@ -93,7 +86,7 @@ let reviews = [{
         description: "text 2"
     },
     {
-        _id: 3, 
+        _id: 3,
         description: "text4"
     },
     {
@@ -146,34 +139,29 @@ let reviews = [{
     }
 ];
 
-
 //HTML Endpoints
 //Defining root route: localhost:3000/
-app.get('/', (req, res) => {
-    res.sendFile('views/index.html', {
+app.get("/", (req, res) => {
+    res.sendFile("views/index.html", {
         root: __dirname
     });
 });
 
+
 //Get all reviews
-app.get('/api/reviews', (req,res) => {
-    console.log('reviews are displaying');
+app.get("/api/reviews", (req, res) => {
+    console.log("reviews are displaying");
     res.json(reviews);
 });
 
 //Get reviews by id
 
-
 //Create CRUD endpoints
 
 //Create reviews (post method)
 
-
 //Update reviews(ge)
 
-
-
-
 app.listen(process.env.PORT || 3000, () => {
-    console.log(`Ghellu game listening at http://localhost:3000/`)
+    console.log(`Ghellu game listening at http://localhost:3000/`);
 });
