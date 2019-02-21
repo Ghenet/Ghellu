@@ -155,8 +155,18 @@ app.get("/api/reviews", (req, res) => {
 });
 
 //Get reviews by id
+app.get('/api/reviews/:id', (req,res) => {
+    const reviewId = parseInt(req.params.id);
+    console.log(`review Id requested is ${reviewId}`);
+    const foundReview = reviews.filter(review => {
+        return review._id == reviewId;
+    })[0];
+    res.json(foundReview);
+});
+
 
 //Create CRUD endpoints
+//
 
 //Create reviews (post method)
 
