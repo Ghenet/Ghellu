@@ -1,3 +1,8 @@
+
+// create User db
+const User = mongoose.model('User', UserSchema );
+module.exports = User;  
+=======
 //Model for user.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;

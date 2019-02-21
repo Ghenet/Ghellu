@@ -10,9 +10,26 @@ app.use(
 );
 
 //Serve static files from public folder
-app.use(express.static("public"));
+
+app.use(express.static('public'));
+
+Defining root route: localhost:3000/
+app.get('/', (req, res) => {
+    res.sendFile('views/signin.html', {
+        root: __dirname
+    });
+});
+
+// trying signin route here////////////////////
+// app.get('/',(req,res)=>{
+//  res.render('home.ejs');
+// });
+// =======
+// app.use(express.static("public"));
 
 
+
+//////////////////////////////////////
 //Data
 
 let questions = [{
