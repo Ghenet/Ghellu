@@ -13,13 +13,20 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'));
 
 //Defining root route: localhost:3000/
-app.get('/', (req, res) => {
-    res.sendFile('views/signin.html', {
-        root: __dirname
-    });
+// app.get('/', (req, res) => {
+//     res.sendFile('views/signin.html', {
+//         root: __dirname
+//     });
+// });
+
+// trying signin route here////////////////////
+app.get('/',(req,res)=>{
+ res.render('home.ejs');
 });
 
 
+
+//////////////////////////////////////
 //Data
 
 var question = [{
