@@ -1,6 +1,8 @@
 const express = require("express");
-app = express();
-bodyParser = require("body-parser");
+const app = express();
+const bodyParser = require("body-parser");
+
+const db = require('./models');
 
 //config body parser
 app.use(
@@ -182,35 +184,41 @@ app.get("/api/reviews/:id", (req, res) => {
 
 
 //Create new reviews
-app.post("/api/reviews", (req,res) => {
-    const newReview = req.body;
-    // if (reviews.length > 0) {
-    //     newReview._d = reviews[reviews.length - 1]._id + 1;
-    // } else {
-    //     newReview._id = 1;
-    // }
-    reviews.push(newReview);
-    res.json(newReview);
-}); 
+app.post("/api/reviews", (req, res) => {
+    db.Review.create(req.body, (err, createdReview) => {
+        if (err) {
+            throw err
+        }
+
+        res.json(createdReview);
+    })
+});
 
 //Update reviews
-app.put("/api/reviews/:id", (req,res) => {
-    const reviewId = parseInt(req.params.id);
+app.put("/api/reviews/:id", (req, res) => {
+    const reviewId = req.params.id;
     const reviewToUpdate = reviews.filter(review => {
-        return review._id == reviewId;
-    })[0];
+        return review._id === reviewId;
+    });
     reviewToUpdate.description = req.body.description;
     res.json(reviewToUpdate);
 });
 
 //Delete reviews
-app.delete('/api/reviews/:id', (req,res) => {
-    const reviewId = parseInt(req.params.id);
+app.delete('/api/reviews/:id', (req, res) => {
+    const reviewId = req.params.id;
     const reviewToDelete = reviews.filter(review => {
-        return review._id == reviewId;
-    })[0];
+        return review._id === reviewId;
+    });
     reviews.splice(reviews.indexOf(reviewToDelete), 1);
     res.json(reviewToDelete);
+})
+
+//This is to get all questions within game
+app.get("/api/questions", (req, res) => {
+    db.Question.find({}, (err, foundQuestions) => {
+        res.json(foundQuestions);
+    })
 })
 
 app.listen(process.env.PORT || 3000, () => {
