@@ -60,3 +60,18 @@ let questionList = [{
 // },
 // ]
 
+db.Question.deleteMany({}, (err, questions) => {
+    if (err) {
+        console.log(`Error occured in deleting all questions ${err}`);
+    }
+
+    console.log(`Removed all questions: ${questions.deletedCount} in total`);
+
+    db.Question.create(questionList, (err, questions) => {
+        if (err) {
+            console.log(`Data not added to database: ${err}`);
+        }
+        console.log(`Created ${questions.length} questions`);
+        process.exit();
+    });
+});
