@@ -147,15 +147,14 @@ app.get("/", (req, res) => {
     });
 });
 
-
 //Get all reviews
 app.get("/api/reviews", (req, res) => {
-    console.log("reviews are displaying");
+    console.log(`reviews are displaying`);
     res.json(reviews);
 });
 
 //Get reviews by id
-app.get('/api/reviews/:id', (req,res) => {
+app.get("/api/reviews/:id", (req, res) => {
     const reviewId = parseInt(req.params.id);
     console.log(`review Id requested is ${reviewId}`);
     const foundReview = reviews.filter(review => {
@@ -165,12 +164,37 @@ app.get('/api/reviews/:id', (req,res) => {
 });
 
 
-//Create CRUD endpoints
-//
+//Create new reviews
+app.post("/api/reviews", (req,res) => {
+    const newReview = req.body;
+    // if (reviews.length > 0) {
+    //     newReview._d = reviews[reviews.length - 1]._id + 1;
+    // } else {
+    //     newReview._id = 1;
+    // }
+    reviews.push(newReview);
+    res.json(newReview);
+}); 
 
-//Create reviews (post method)
+//Update reviews
+app.put("/api/reviews/:id", (req,res) => {
+    const reviewId = parseInt(req.params.id);
+    const reviewToUpdate = reviews.filter(review => {
+        return review._id == reviewId;
+    })[0];
+    reviewToUpdate.description = req.body.description;
+    res.json(reviewToUpdate);
+});
 
-//Update reviews(ge)
+//Delete reviews
+app.delete('/api/reviews/:id', (req,res) => {
+    const reviewId = parseInt(req.params.id);
+    const reviewToDelete = reviews.filter(review => {
+        return review._id == reviewId;
+    })[0];
+    reviews.splice(reviews.indexOf(reviewToDelete), 1);
+    res.json(reviewToDelete);
+})
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Ghellu game listening at http://localhost:3000/`);
