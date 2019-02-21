@@ -2,38 +2,18 @@ console.log("Sanity Check: JS is working!");
 var $questionList;
 var allQuestions = [];
 
-$(document).ready(function(){
-
-  $questionList = $('#questionTarget');
-  $.ajax({
-    method: 'GET',
-    url: '/api/question',
-    success: handleSuccess,
-    error: handleError
-  });
-});
-
-function getAllQuestionsHtml(question) {
-  return question.map(getBookHtml).join("");
+Question = (text, choices, answer) => {
+  this.text = text;
+  this.choices = choices;
+  this.answer = answer;
 }
 
-// helper function to render all posts to view
-// note: we empty and re-render the collection each time our post data changes
-function render () {
-  // empty existing posts from view
-  $questionList.empty();
-
-  // pass `allQuestion` into the template function
-  var questionHtml = getAllQuestionsHtml(allQuestions);
-
-  // append html to the view
-  $questionList.append(questionHtml);
-};
-
-function handleSuccess(json) {
-  allQuestions = json;
-  render();
+Question.prototype.correctAnswer = (choice) => {
+  return choice === this.answer;
 }
+//   allQuestions = json;
+//   render()
+// }
 
 function handleError(e) {
   console.log('uh oh');

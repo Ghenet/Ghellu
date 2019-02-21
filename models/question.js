@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+Schema = mongoose.Schema;
 
-const QuestionSchema = new Schema({
-    title: String,
-    id: Number,
+Question = (text, choices, answer) => {
+    this.text = text;
+    this.choices = choices;
+    this.answer = answer;
+}
 
-});
-
-const Question = mongoose.model("question", QuestionSchema);
+Question.prototype.correctAnswer = (choice) => {
+    return choice === this.answer;
+}
 
 module.exports = Question;
