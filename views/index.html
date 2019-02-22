@@ -7,13 +7,13 @@
     <title>Ghellu App</title>
     <!-- STYLESHEETS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./styles/styles.css" type="text/css">
+  <link rel="stylesheet" href="/public/styles/styles.css" type="text/css">
   <!-- VENDOR SCRIPTS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
   <!-- APPLICATION SCRIPTS -->
-  <script src="/scripts/app.js"></script>
+  <script type="text/javascript" src="../public/scripts/app.js"></script>
    
 </head>
 <body>
@@ -23,12 +23,12 @@
         <div>Score</div>
     </nav>
 <div class="quiz-container">
-    <div class="options col">
-        <button id="btn0"><span id="choice0">Default 1</span></button>
-        <button id="btn1"><span id="choice1">Default 2</span></button>
-        <button id="btn2"><span id="choice2">Default 3</span></button>
-        <button id="btn3"><span id="choice3">Default 4</span></button>
-    </div>
+    <div id='wrapper'>
+        <button id='but1'>Button1</button>
+        <button id='but2'>Button2</button>
+        <button id='but3'>Button3</button>
+        <button id='but4'>Button4</button>
+      </div>
         <div class="question col" id ="question"><span id="initQuestion">What is so miserable a thing as man?</span></div>
         <button class="checkbtn">Check</button>
 </div>

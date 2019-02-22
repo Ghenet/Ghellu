@@ -15,20 +15,6 @@ app.use(
 
 app.use(express.static('/public'));
 
-//Defining root route: localhost:3000/
-app.get('/', (req, res) => {
-    res.sendFile('views/signin.html', {
-        root: __dirname
-    });
-});
-
-// trying signin route here////////////////////
-app.get('/',(req,res)=>{
- res.render('app.js');
-});
-
-
-
 
 //////////////////////////////////////
 //Data
@@ -160,7 +146,7 @@ let reviews = [{
 //HTML Endpoints
 //Defining root route: localhost:3000/
 app.get("/", (req, res) => {
-    res.sendFile("views/landingpage.html", {
+    res.sendFile("views/index.html", {
         root: __dirname
     });
 });

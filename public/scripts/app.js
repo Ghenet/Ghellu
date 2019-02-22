@@ -1,33 +1,28 @@
-var mongoose = require("mongoose");
-mongoose.Promise = global.Promise;mongoose.connect("mongodb://localhost:3000/");
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
+window.onload = () => {
 console.log("Sanity Check: JS is working!");
-var $questionList;
-var allQuestions = [];
-
+// var $questionList;
+// var allQuestions = [];
+}
 Question = (text, choices, answer) => {
   this.text = text;
   this.choices = choices;
   this.answer = answer;
 }
-// trying something new
-app.use('/', (req, res) => {
-  res.sendFile(_dirname + "/index.html");
-});
-// 
-Question.prototype.correctAnswer = (choice) => {
-  return choice === this.answer;
-}
-  allQuestions = json;
+// // trying something new
+// app.use('/', (req, res) => {
+//   res.sendFile(_dirname + "/index.html");
+// });
+// // 
+// Question.prototype.correctAnswer = (choice) => {
+//   return choice === this.answer;
+// }
+//   allQuestions = json;
 
 
-function handleError(e) {
-  console.log('uh oh');
-  $('#questionTarget').text('Failed to load, is the server working?');
-}
+// function handleError(e) {
+//   console.log('uh oh');
+//   $('#questionTarget').text('Failed to load, is the server working?');
+//}
 
 // function newQuestionSuccess(json) {
 //   $('#newQuestionForm input').val('');
@@ -53,10 +48,23 @@ function handleError(e) {
 //   `
 // }
 
-document.querySelectorAll('[id^="btn"]').onClick = () => {
-  if (Question.Id = choice) {
-    console.log('correct'); 
+const wrapper = document.getElementById('wrapper');
+
+wrapper.addEventListener('click', (event) => {
+  const isButton = event.target.nodeName === 'BUTTON';
+  if (!isButton) {
+    return;
+
   } else {
-    console.log('try again');
+    var answer = this.Question.answer;
+    var correctAnswer = this.Question.correctAnswer;
+
+    if (answer == correctAnswer) {
+      console.log('correct'); 
+    } else { 
+      console.log('try again');
+    }
   }
-  }
+
+  console.dir(event.target.id);
+})

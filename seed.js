@@ -6,7 +6,8 @@ const express = require/('./models');
 let questionList = [{
         description: "question 1",
         answer: {
-            description: 'answer'
+            description: 'answer',
+            correctAnswer: 'correct answer'
         }
     }
     // {
