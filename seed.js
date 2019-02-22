@@ -7,7 +7,7 @@ let questionList = [{
         description: "question 1",
         answer: {
             description: 'answer',
-            correctAnswer: 'correct answer'
+            //correctAnswer: 'correct answer'
         }
     }
     // {
