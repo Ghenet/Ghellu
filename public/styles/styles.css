@@ -25,7 +25,6 @@ nav div {
     display: block;
 }
 .question {
-    border: 2px solid black;
     display: grid;
     width: 49%;
     float: right;

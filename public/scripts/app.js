@@ -29,26 +29,34 @@ function handleError(e) {
   $('#questionTarget').text('Failed to load, is the server working?');
 }
 
-function newQuestionSuccess(json) {
-  $('#newQuestionForm input').val('');
-  allQuestions.push(json);
-  render();
-}
+// function newQuestionSuccess(json) {
+//   $('#newQuestionForm input').val('');
+//   allQuestions.push(json);
+//   render();
+// }
 
-function newQuestionError() {
-  console.log( 'error!');
-}
+// function newQuestionError() {
+//   console.log( 'error!');
+// }
 
-function apiCall() {
+ //function apiCall() {
   // Ajax request for data
   // USe the data to create a template:
   // template(data);
-}
+//}
 
-function template(json) {
-  return `
-    <div className="questionContainer">
+// function template(json) {
+//   return `
+//     <div className="questionContainer">
 
-    </div>
-  `
-}
+//     </div>
+//   `
+// }
+
+document.querySelectorAll('[id^="btn"]').onClick = () => {
+  if (Question.Id = choice) {
+    console.log('correct'); 
+  } else {
+    console.log('try again');
+  }
+  }
