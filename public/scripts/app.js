@@ -30,3 +30,16 @@ function newQuestionError() {
   console.log( 'error!');
 }
 
+function apiCall() {
+  // Ajax request for data
+  // USe the data to create a template:
+  // template(data);
+}
+
+function template(json) {
+  return `
+    <div className="questionContainer">
+      
+    </div>
+  `
+}

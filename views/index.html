@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ghellu</title>
+
     <link rel="stylesheet" href="./styles/styles.css" type="text/css">
+    <script src="/scripts/app.js"></script>
+
 </head>
 <body>
     <nav>
@@ -16,6 +19,7 @@
 
     <main>
       <div class="playground">
+          <form action="/views/" method = "POST">
         <div class="row">
             <button id="btn2"><span id="choice2"></span></button>
             <button id="btn3"><span id="choice3"></span></button>
@@ -23,10 +27,12 @@
     <div class="row">
         <button id="btn0"><span id="choice0"></span></button>
         <button id="btn1"><span id="choice1"></span></button>
+       
     </div>
         <div class="question" id ="question"></div>
     </div>
     <button class="checkbtn">Check</button>
+        </form>
     </main>
 </body>
 </html>
