@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
-mongoose.connect = ("mongodb://localhost/Ghellu");
-const express = require('express');
+mongoose.connect("mongodb://localhost/Ghellu", {
+    useNewUrlParser: true
+});
 
-module.exports.Quiz = require("./quiz_controller");
-module.exports.Question = require('./question')
+module.exports = {
+    Question: require("./question"),
+    Review: require("./review"),
+    Answer: require("./answer")
+}
+
