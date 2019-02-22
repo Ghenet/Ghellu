@@ -67,10 +67,10 @@ let questionList = [{
 // },
 // ]
 
-db.Question.deleteMany({}, (err, questions) => {
-    if (err) {
-        console.log(`Error occured in deleting all questions ${err}`);
-    }
+// db.Question.deleteMany({}, (err, questions) => {
+//     if (err) {
+//         console.log(`Error occured in deleting all questions ${err}`);
+//     }
 
     console.log(`Removed all questions: ${questions.deletedCount} in total`);
     questionList.forEach(question => {
@@ -89,22 +89,22 @@ db.Question.deleteMany({}, (err, questions) => {
                 })
 
                 //another way
-                // db.Answer.create(answer, (err, answerObj) => {
-                //     if (err) {
-                //         return console.log(`Data not added to database: ${err}`);
-                //     }
-                //     questionObj.answer = answerObj;
-                //     questionObj.save((err, newQuestion) => {
-                //         if (err) {
-                //             return console.log(`Data not added to database: ${err}`);
-                //         }
-                //         console.log(`Created ${newQuestion} questions`);
-                //     })
-                // })
+                db.Answer.create(answer, (err, answerObj) => {
+                    if (err) {
+                        return console.log(`Data not added to database: ${err}`);
+                    }
+                    questionObj.answer = answerObj;
+                    questionObj.save((err, newQuestion) => {
+                        if (err) {
+                            return console.log(`Data not added to database: ${err}`);
+                        }
+                        console.log(`Created ${newQuestion} questions`);
+                    })
+                })
             }
 
             process.exit();
         });
     })
 
-});
+
