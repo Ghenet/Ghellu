@@ -1,3 +1,38 @@
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const passport = require('passport');
+const localStrategy = require('passport-local');
+const passportLocalMongoose = require('passport-local-mongoose');
+const User = require('./models/user');
+const db = require('./models');
+// const scrp = require('./public/scripts');
+// generate a new express app and call it 'app'
+const app = express();
+
+// serve static files in public
+app.use(express.static('public'));
+
+app.use(require('express-session')({
+secret:"Bella is the best dog in the world",
+resave:false,
+saveUninitialized:false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// body parser config to accept our datatypes
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
+
+// ------------------------------------------------------
+
 console.log("Sanity Check: JS is working!");
 var $questionList;
 var allQuestions = [];
