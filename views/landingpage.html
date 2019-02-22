@@ -18,29 +18,40 @@
 <body>
     <nav>
         <button id="exit">Sign Out</button>
+
+        <div>Badge</div>
+        <div> <p> Score </p></div>
+    </nav>
+    <main>
+
+        <button>Game Time</button>
+       
+        <div  class="review">
+<textarea name="" id="" cols="55" rows="5"></textarea>
+
+<button class="createbtn">We would like u to *JUDGE* us plzz</button>
         <!-- <div>Badge</div> -->
         <div>Score</div>
     </nav>
     <main>
 
-        <button id="play">Let's play!</button>
-        <button>Levels</button>
-        <div class="review">
+        <button id="play"><a href="/dash">Let's Play!</a></button>
+        <div class="reviewSection">
             <div>
                 <p><strong>Reviews</strong></p>
             </div>
             <form method="POST" action="/api/reviews" class="form-row" id="newReviewForm">
                 <div class="col-4">
-                    <textarea type="text" name="review" row="10" placeholder="Please review our app"></textarea>
+                    <textarea type="text" name="description" row="10" placeholder="Please review our app"></textarea>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-success">Send review</button>
+                    <input type="submit" value="Send Review" class="btn btn-success" />
                 </div>
             </form>
         </div>
 
         <div id='reviewTarget'>
-            <img src="./images/ready.gif" alt="">
+            <!-- <img src="./images/ready.gif" alt=""> -->
         </div>
     </main>
 
