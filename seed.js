@@ -2,111 +2,58 @@
 const db = require('./models');
 const express = require/('./models');
 
-let questionList = [
-    {
+
+let questionList = [{
         description: "question 1",
         answer: {
-            _id: 01,
-            text: "default"
-        } 
-    },
-    {
-        description: "question 2",
-        answer: {
-            _id: 02,
-            text: "default"},
-    },
-    {
-        description: "question 3",
-        answer: {
-            _id: 03,
-            text: "default"
-        },
-    },
-    {
-        description: "question 4",
-        answer: {
-            _id: 04,
-            text: "default"
-        },
-    },
-    {
-        description: "question 5",
-        answer: {
-            _id: 05,
-            text: "default"
-        },
-    },
-    {
-        description: "question 6",
-        answer: {
-            _id: 06,
-            text: "default"
-        },
-    },
-    {
-        description: "question 7",
-        answer: {
-            _id: 07,
-            text: "default"
-        },
-    },
-    {
-        description: "question 8",
-        answer: {
-            _id: 08,
-            text: "default"
-        },
-    },
-    {
-        description: "question 9",
-        answer: {
-            _id: 09,
-            text: "default"
-        },
-    },
-    {
-        description: "question 10",
-        answer: {
-            _id: 10,
-            text: "default"},
-    },
-    {
-        description: "question 11",
-        answer: {
-            _id: 11,
-            text: "default"
-        },
-    },
-    {
-        description: "question 12",
-        answer: {
-            _id: 12,
-            text: "default"
-        },
-    },
-    {
-        description: "question 13",
-        answer: {
-            _id: 13,
-            text: "default"
-        },
-    },
-    {
-        description: "question 14",
-        answer: {
-            _id: 14,
-            text: "default"
-        },
-    },
-    {
-        description: "question 15",
-        answer: {
-            _id: 15,
-            text: "default"
-        },
+            description: 'answer'
+        }
     }
+    // {
+    //     description: "question 2"
+    // },
+    // {
+    //     description: "question 3"
+    // },
+    // {
+    //     description: "question 4"
+    // },
+    // {
+    //     description: "question 5"
+    // },
+    // {
+    //     description: "question 6"
+    // },
+    // {
+    //     description: "question 7"
+    // },
+    // {
+    //     description: "question 8"
+    // },
+    // {
+    //     description: "question 9"
+    // },
+    // {
+    //     description: "question 10"
+    // },
+    // {
+    //     description: "question 11"
+    // },
+    // {
+    //     description: "question 12"
+    // },
+    // {
+    //     description: "question 13"
+    // },
+    // {
+    //     description: "question 14"
+    // },
+    // {
+    //     description: "question 15"
+    // }
 ]
+
+
 
 //Making sure first dummy data works before creating additional ones
 // let answerList = [{
@@ -119,17 +66,44 @@ let questionList = [
 // },
 // ]
 
-db.Question.deleteMany({}, function(err, books){
-    if(err) {
-      console.log('Error occurred in remove', err);
-    } else {
-      console.log('removed all Questions');
-  
-      // create new records based on the array 
-      db.Question.create(questionList, function(err, questions){
-        if (err) { return console.log('err', err); }
-        console.log("created", question.length, "questions");
-        process.exit();
-      });
+db.Question.deleteMany({}, (err, questions) => {
+    if (err) {
+        console.log(`Error occured in deleting all questions ${err}`);
     }
-  });
+
+    console.log(`Removed all questions: ${questions.deletedCount} in total`);
+    questionList.forEach(question => {
+        db.Question.create(question, (err, questionObj) => {
+            if (err) {
+                return console.log(`Data not added to database: ${err}`);
+            }
+            console.log(questionObj);
+            if (questionObj) {
+                //1 way
+                db.Answer.create(questionObj.answer, (err, answerObj) => {
+                    if (err) {
+                        return console.log(`Data not added to database: ${err}`);
+                    }
+                    console.log(`Created ${answerObj}`);
+                })
+
+                //another way
+                // db.Answer.create(answer, (err, answerObj) => {
+                //     if (err) {
+                //         return console.log(`Data not added to database: ${err}`);
+                //     }
+                //     questionObj.answer = answerObj;
+                //     questionObj.save((err, newQuestion) => {
+                //         if (err) {
+                //             return console.log(`Data not added to database: ${err}`);
+                //         }
+                //         console.log(`Created ${newQuestion} questions`);
+                //     })
+                // })
+            }
+
+            process.exit();
+        });
+    })
+
+});

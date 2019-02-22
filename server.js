@@ -160,7 +160,7 @@ let reviews = [{
 //HTML Endpoints
 //Defining root route: localhost:3000/
 app.get("/", (req, res) => {
-    res.sendFile("views/index.html", {
+    res.sendFile("views/landingpage.html", {
         root: __dirname
     });
 });
@@ -213,7 +213,6 @@ app.delete('/api/reviews/:id', (req, res) => {
     res.json(reviewToDelete);
 })
 
-app.listen = (process.env.PORT || 3000, () => {
 //This is to get all questions within game
 app.get("/api/questions", (req, res) => {
     db.Question.find({}, (err, foundQuestions) => {
@@ -224,4 +223,4 @@ app.get("/api/questions", (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Ghellu game listening at http://localhost:3000/`);
 });
-});
+
