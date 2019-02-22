@@ -1,13 +1,21 @@
+
+// create User db
+const User = mongoose.model('User', UserSchema );
+module.exports = User;  
 //Model for user.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//Creating User schema with 3 attributes and 1 embedded attribute (score)
+//Creating User schema with 4 attributes and 1 referenced attribute (reference Review by objectId)
 const User = new Schema({
-    name = String,
-    email = String,
-    image = String,
-    score = number
+    firstName: String,
+    email: String,
+    image: String,
+    score: Number,
+    userReview: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Review'
+    }]
 });
 
 //Creating User model from schema created above

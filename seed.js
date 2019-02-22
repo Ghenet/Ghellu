@@ -1,8 +1,6 @@
 //Import all models here
 const db = require('./models');
-const express = require('./views')
-
-const express = require/('/models')
+const express = require/('/models');
 
 let questionList = [
     {

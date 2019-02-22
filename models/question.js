@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 Schema = mongoose.Schema;
 
-Question = (text, choices, answer) => {
-    this.text = text;
-    this.choices = choices;
-    this.answer = answer;
-}
+const QuestionSchema = new Schema({
+    description: String
+});
 
-Question.prototype.correctAnswer = (choice) => {
-    return choice === this.answer;
-}
+const Question = mongoose.model('Question', QuestionSchema);
 
 module.exports = Question;
