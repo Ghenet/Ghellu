@@ -6,33 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ghellu</title>
 
-    <link rel="stylesheet" href="./styles/styles.css" type="text/css">
-    <script src="/scripts/app.js"></script>
+    <link rel="stylesheet" href="/public/styles/styles.css" type="text/css">
+    <script src="/public/scripts/app.js"></script>
 
 </head>
 <body>
     <nav>
         <button id="exit">Exit</button>
-        <div>Badge</div>
-        <div>Score</div>
+        <div id="userName">defaultUser</div>
+        <div id="badge">X</div>
+        <div id="score">Your Score: 0</div>
     </nav>
-
-    <main>
-      <div class="playground">
-          <form action="/views/" method = "POST">
-        <div class="row">
-            <button id="btn2"><span id="choice2"></span></button>
-            <button id="btn3"><span id="choice3"></span></button>
-        </div>
-    <div class="row">
-        <button id="btn0"><span id="choice0"></span></button>
-        <button id="btn1"><span id="choice1"></span></button>
-       
+<div class="quiz-container">
+    <div class="options col">
+        <button id="btn0"><span id="choice0">Default 1</span></button>
+        <button id="btn1"><span id="choice1">Default 2</span></button>
+        <button id="btn2"><span id="choice2">Default 3</span></button>
+        <button id="btn3"><span id="choice3">Default 4</span></button>
     </div>
-        <div class="question" id ="question"></div>
-    </div>
-    <button class="checkbtn">Check</button>
-        </form>
-    </main>
+        <div class="question col" id ="question"><span id="initQuestion">What is so miserable a thing as man?</span></div>
+        <button class="checkbtn">Check</button>
+</div>
 </body>
 </html>

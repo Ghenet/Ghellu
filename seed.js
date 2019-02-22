@@ -1,6 +1,6 @@
 //Import all models here
 const db = require('./models');
-const express = require/('/models');
+const express = require/('./models');
 
 let questionList = [
     {
@@ -125,7 +125,7 @@ db.Question.deleteMany({}, function(err, books){
     } else {
       console.log('removed all Questions');
   
-      // create new records based on the array books_list
+      // create new records based on the array 
       db.Question.create(questionList, function(err, questions){
         if (err) { return console.log('err', err); }
         console.log("created", question.length, "questions");

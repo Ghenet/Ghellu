@@ -1,63 +1,46 @@
-body{
-    margin:20px;
+body {
+    margin: 0;
 }
 
-nav{
-margin : 20px;
-width: 100%;
-background-color: purple;
-padding: 35px;
-font-size: 20px;
-display: flex;
+nav {
+    width: 100%;
+    display: flex;
+    background-color: purple;
+    padding: 1rem;
 }
-/* .row{
-    width : 60%;
-} */
-nav button , div{
-    margin: 0 25px; 
+
+nav div {
+    text-align: center;
+    padding: 0 .5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
-.answers{
-    padding: 25px;
-    width: 250px;
-    height: 250px;
-    margin: 20px;
-   
+.options {
+    width: 49%;
+    display: grid;
+    float: left;
 }
-.answers:hover{
-    box-shadow: 0 28px 26px -2px blue;
+#btn0, #btn1, #btn2, #btn3 {
+    
+    display: block;
 }
-#question{
-    width: 38%;
-    height: 450px;
-    border-radius: 60%;
-    background-color: blue;
+.question {
+    border: 2px solid black;
+    display: grid;
+    width: 49%;
     float: right;
-    top: -488px;
-    position:relative;   
+    height: 100%
+
 }
 
-.checkbtn{
-    width: 35%;
-    padding: 20px;
-    margin: 45px; 
-    margin-left:90px; 
-    font-size: 20px;
-    background-color: rgb(10, 173, 59);
+
+.checkbtn {
+    display: block;
+    width: 100%
 }
 
-@media (max-width:760px){
-    .playground{
-        display: flex;
-        flex-direction: column;
-    }
-    #question{
-        width: 250px;
-        height: 250px;
-        border-radius: 20px;
-        background-color: blue;
-        float: right;
-        top: -338px;
-        /* position:absolute; */
-        
-    }
+.quiz-container {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 50px;
 }

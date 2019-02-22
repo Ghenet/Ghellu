@@ -13,7 +13,7 @@ app.use(
 
 //Serve static files from public folder
 
-app.use(express.static('public'));
+app.use(express.static('/public'));
 
 //Defining root route: localhost:3000/
 app.get('/', (req, res) => {
@@ -23,11 +23,10 @@ app.get('/', (req, res) => {
 });
 
 // trying signin route here////////////////////
-// app.get('/',(req,res)=>{
-//  res.render('home.ejs');
-// });
-// =======
-// app.use(express.static("public"));
+app.get('/',(req,res)=>{
+ res.render('app.js');
+});
+
 
 
 
