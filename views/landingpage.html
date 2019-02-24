@@ -14,7 +14,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="/scripts/app.js"></script>
+    <script src="/scripts/reviews.js"></script>
 
 </head>
 
@@ -30,9 +30,9 @@
         <div class="reviewSection">
             <div>
                 <p><strong>Reviews</strong></p>
-            </div>
+            </div class="col-4">
             <form method="POST" action="/api/reviews" class="form-row" id="newReviewForm">
-                <div class="col-4">
+                <div>
                     <textarea type="text" name="description" row="10" placeholder="Please review our app"></textarea>
                 </div>
                 <div>
@@ -42,7 +42,7 @@
         </div>
 
         <div id='reviewTarget'>
-            <!-- <img src="./images/ready.gif" alt=""> -->
+            <img src="./images/ready.gif" alt="">
         </div>
     </main>
 </body>
