@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Landing Page</title>
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/landingpage.css" type="text/css">
+    <!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <!-- APPLICATION SCRIPTS -->
+    <script src="/scripts/reviews.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <button id="exit">Sign Out</button>
+        <!-- <div>Badge</div> -->
+        <div>Score</div>
+    </nav>
+    <main>
+
+        <button id="play"><a href="/dash">Let's Play!</a></button>
+        <div class="reviewSection">
+            <div>
+                <p><strong>Reviews</strong></p>
+            </div class="col-4">
+            <form method="POST" action="/api/reviews" class="form-row" id="newReviewForm">
+                <div>
+                    <textarea type="text" name="description" row="10" placeholder="Please review our app"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Send Review" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+
+        <div id='reviewTarget'>
+            <img src="./images/ready.gif" alt="">
+        </div>
+    </main>
+</body>
+
+</html>
