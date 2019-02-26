@@ -11,10 +11,21 @@ nav{
     margin:  30px;;
     
     }
-    nav div{
+
+nav div{
         float: right;
         margin: 0 125px;
     }
+
+#exit{
+    color: aquamarine;
+    font-size: 18px;
+    background: rgba(255,255,255, 0.2);
+    padding:10px;
+    display: block;
+}
+    
+
     main{
         margin: 40px;
     }
