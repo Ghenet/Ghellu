@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //require express in our app
 const express = require('express');
 const mongoose = require('mongoose');
@@ -26,12 +27,16 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+=======
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+
+>>>>>>> 37bf3ed74d2530c992d74a2b170da4926e929681
 // body parser config to accept our datatypes
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.set('view engine','ejs');
 
-///=========landing page route========
-
+<<<<<<< HEAD
 
 // ============================
 
@@ -118,6 +123,9 @@ app.get('/', (req, res) => {
     });
 });
 
+=======
+const db = require('./models');
+>>>>>>> 37bf3ed74d2530c992d74a2b170da4926e929681
 
 //config body parser
 app.use(
@@ -127,6 +135,7 @@ app.use(
 );
 
 //Serve static files from public folder
+<<<<<<< HEAD
 
 app.use(express.static('/public'));
 
@@ -266,6 +275,9 @@ let reviews = [{
         description: "What is css"
     }
 ];
+=======
+app.use(express.static("public"));
+>>>>>>> 37bf3ed74d2530c992d74a2b170da4926e929681
 
 //HTML Endpoints
 //Defining root route: localhost:3000/
@@ -275,10 +287,21 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/dash", (req, res) => {
+    res.sendFile("views/index.html", {
+        root: __dirname
+    });
+});
+
 //Get all reviews
 app.get("/api/reviews", (req, res) => {
     console.log(`reviews are displaying`);
-    res.json(reviews);
+    db.Review.find({}, (err, foundReviews) => {
+        if (err) {
+            throw err
+        }
+        res.json(foundReviews);
+    })
 });
 
 //Get reviews by id
@@ -315,13 +338,17 @@ app.put("/api/reviews/:id", (req, res) => {
 
 //Delete reviews
 app.delete('/api/reviews/:id', (req, res) => {
-    const reviewId = req.params.id;
-    const reviewToDelete = reviews.filter(review => {
-        return review._id === reviewId;
+    db.Review.findOneAndDelete({
+        _id: req.params.id
+    }, (err, deletedId) => {
+        if (err) {
+            throw err;
+        }
+
+        res.json(deletedId);
     });
-    reviews.splice(reviews.indexOf(reviewToDelete), 1);
-    res.json(reviewToDelete);
-})
+});
+
 
 //This is to get all questions within game
 app.get("/api/questions", (req, res) => {

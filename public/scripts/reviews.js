@@ -96,49 +96,10 @@ function deleteReviewSuccess(json) {
   }
   render();
 }
-  allQuestions = json;
-
-
-// function handleError(e) {
-//   console.log('uh oh');
-//   $('#question').text('Failed to load, is the server working?');
-//}
-
-// function newQuestionSuccess(json) {
-//   $('#newQuestionForm input').val('');
-//   allQuestions.push(json);
-//   render();
-// }
-
-// function newQuestionError() {
-//   console.log( 'error!');
-// }
-
- //function apiCall() {
-  // Ajax request for data
-  // USe the data to create a template:
-  // template(data);
-//}
-
-// function template(json) {
-//   return `
-//     <div className="questionContainer">
-
-//     </div>
-//   `
-// }
-
-const wrapper = document.getElementById('wrapper'); 
-
-wrapper.addEventListener('click', (event) => {
-  const isButton = event.target.nodeName === 'BUTTON';
-  if (!isButton) {
-    return;
-
-  } 
-  console.dir(event.target.id);
-})
 
 function deleteReviewError() {
   console.log('deletereview error message!');
 }
+
+
+
