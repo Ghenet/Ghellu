@@ -10,9 +10,6 @@ const db = require('./models');
 
 //mongoose.connect("mongodb://localhost:3000/Ghellu");
 
-const app = express();
-const bodyParser = require("body-parser");
-
 
 // serve static files in public
 app.use(express.static('public'));
@@ -43,10 +40,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // =======================================================
 
 
-// app.get('/',isLoggedIn, (req ,res) => {
-//     res.sendFile('/landingpage.html' , 
-//     { root : __dirname});
-//   });
+app.get('/',isLoggedIn, (req ,res) => {
+    res.sendFile('/landingpage.html' , 
+    { root : __dirname});
+  });
   
   // sends user to the register forum
   app.get('/register', (req, res) => {
@@ -121,7 +118,6 @@ app.get('/', (req, res) => {
     });
 });
 
-const db = require('./models');
 
 //config body parser
 app.use(
