@@ -20,14 +20,11 @@ nav div {
 .container {
   height: 330px;
   width: 1000px;
-  position: absolute;
   top: 50%;
   left: 50%;
-  transfrom: translateX(-50%) translateY(-50%);
   background: rgba(255, 255, 255, 0.5);
   padding: 20px;
   border: 1px solid #08038c;
-  box-shadow: 0 0 8px 3px #fff;
 }
 
 .title {
