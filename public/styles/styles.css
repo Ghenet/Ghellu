@@ -16,34 +16,6 @@ nav div {
   font-size: 1.5rem;
   font-weight: bold;
 }
-/* .options {
-    width: 49%;
-    display: grid;
-    float: left;
-}
-#btn0, #btn1, #btn2, #btn3 {
-    
-    display: block;
-}
-.question {
-    display: grid;
-    width: 49%;
-    float: right;
-    height: 100%
-
-}
-
-
-.checkbtn {
-    display: block;
-    width: 100%
-}
-
-.quiz-container {
-    width: 500px;
-    margin: 0 auto;
-    padding-top: 50px;
-} */
 
 .container {
   height: 330px;
