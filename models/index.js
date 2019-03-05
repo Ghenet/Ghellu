@@ -1,10 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/Ghellu", {
-    useNewUrlParser: true
+  useNewUrlParser: true
 });
 
 module.exports = {
-    Question: require("./question"),
-    Review: require("./review"),
-    Answer: require("./answer")
-}
+  Review: require("./review")
+};

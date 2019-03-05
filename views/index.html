@@ -1,55 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ghellu App</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ghellu</title>
+    <base href="/">
     <!-- STYLESHEETS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/public/styles/styles.css" type="text/css">
-  <!-- VENDOR SCRIPTS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://registry.npmjs.org/normalize.css/-/normalize.css-8.0.1.tgz"> -->
+    <!-- <link rel="stylesheet" type="text/css" src="../public/styles/styles.css"/> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    /> -->
+    <link href="./public/styles/styles.css" type="text/css" />
+    <!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"
+    ></script>
+    <!-- APPLICATION SCRIPTS -->
+    <script type="text/javascript" src="./public/scripts/app.js"></script>
+  </head>
+  
+  <header>
+      <nav>
+          <button id="Back"><a href="/">Home</a></button>
+          <!-- <div>Badge</div>
+          <div>Score</div> -->
+        </nav>
+  </header>
+  <body>
+      <div class="quiz container">
+        <div class="title">Ghellu</div>
+        <div class="question" id="question"></div>
+        <label class="option"><input type="radio" name="option" value="1"><span id="opt1"></span></input></label>
+        <label class="option"><input type="radio" name="option" value="2"><span id="opt2"></span></input></label>
+        <label class="option"><input type="radio" name="option" value="3"><span id="opt3"></span></input></label>
+        <label class="option"><input type="radio" name="option" value="4"><span id="opt4"></span></input></label>
+        <button id="nextButton" class="next-btn" onClick="loadNextQuestion();">Next</button>
 
-  <!-- APPLICATION SCRIPTS -->
-  <script type="text/javascript" src="../public/scripts/app.js"></script>
-   
-</head>
-<body>
-    <nav>
-        <button id="Back"><a href="/">Home</a></button>
-        <div>Badge</div>
-        <div>Score</div>
-    </nav>
-<<<<<<< HEAD
-<div class="quiz-container">
-    <div id='wrapper'>
-        <button id='but1'>Button1</button>
-        <button id='but2'>Button2</button>
-        <button id='but3'>Button3</button>
-        <button id='but4'>Button4</button>
-      </div>
-        <div class="question col" id ="question"><span id="initQuestion">What is so miserable a thing as man?</span></div>
-        <button class="checkbtn">Check</button>
-</div>
-=======
-
-    <main>
-      <div class="playground">
-        <div class="row">
-          <button class ="answers" id="answerTarget">Correct Answer</button>
-          <button class ="answers">Random Answer</button>
         </div>
-        <div class="row">
-          <button class ="answers">Random Answer</button>
-          <button class ="answers">Random Answer</button>
-        </div>
-        <div class="question" id ="question"></div>
-    </div>
-    <button class="checkbtn">Check</button>
-    </main>
->>>>>>> 37bf3ed74d2530c992d74a2b170da4926e929681
-</body>
-</html> 
-
+<div id="result" class="container result" style="display:none;"></div>
+<!-- /////// Move before submit -->
+<script src="/models/question.js"></script>
+<script src="/quiz-script.js"></script>
+  </body>
+</html>
